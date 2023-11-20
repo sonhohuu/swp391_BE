@@ -1,0 +1,81 @@
+  spring:
+    datasource:
+      url: jdbc:mysql://localhost:3306/coursedraw
+      username: root
+      password: 272542774
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    thymeleaf:
+      cache: false
+
+    jpa:
+      database-platform: org.hibernate.dialect.MySQL5Dialect
+      hibernate:
+        ddl-auto: update
+        show-sql: true
+        format-sql: true
+        type: info
+        use-sql-comments: true
+        properties:
+          hibernate.use_sql_comments: true
+          hibernate.format_sql: true
+
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: hhson365@gmail.com
+      password: 272542774
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
+
+  springdoc:
+    show-actuator: true
+    paths-to-match: /**
+    packages-to-scan: com.FPTU
+
+  management:
+    endpoint:
+      health:
+        show-details: ALWAYS
+      endpoints:
+        web:
+          exposure:
+            include: "*"
+
+  jwt:
+    secretKey: secret
+    issuer: www.fptu.com
+    expirationMinute: 10
+
+  swagger:
+    contact-name: Kong
+    contact-mail: congnttse172288@fpt.edu.vn
+    contact-url: https://www.facebook.com/profile.php?id=100008273866423
+    app-name: DrawingCourseWeb
+    app-description: "This is a DrawingCourseWeb. This project includes: Spring Boot (2.7.4), Spring Data JPA, Spring Validation, Spring Security + JWT Token, MySQL, Mapstruct, Lombok, Swagger"
+    app-version: 2.0.0
+    app-license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+    app-license: Apache 2.0
+
+  paypal:
+    mode: sandbox
+    client:
+      app: AVaxfL_hvQWJAo558WSOh3u97t0FV1cp12fn-R5EMEGQWOh7vFKbsbIWrtA87Yk9xrRzv1X_OKYhxp60
+      secret: ELcpX7e25pNJiD1U5W0qetvsB5qsZA8DMZuYDL_LXR7NpZvHMdmVTlGI9rQvYmFpsm2PlOxs7WQniktF
+
+  google:
+    oauth:
+      clientSecret: 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
+      redirectUri: http://localhost:8080/login-google
+      tokenEndpoint: https://accounts.google.com/o/oauth2/token
+      userInfoEndpoint: https://www.googleapis.com/oauth2/v1/userinfo?access_token=
+      grantType: authorization_code
+
+  cloudinary:
+    cloudName: diaixspmb
+    apiKey: 847994144233293
+    apiSecret: iYSvP--vkTKToK9RyA6zGFFPjbg
